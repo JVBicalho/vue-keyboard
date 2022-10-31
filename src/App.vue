@@ -51,6 +51,9 @@ main{
   display: flex;
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  top: 25vh;
+  justify-content: center;
   
 }
 .keyboard{
