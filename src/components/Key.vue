@@ -13,6 +13,7 @@ export default {
 </script>
 <style >
   span{
+    cursor: pointer;
     position:relative;
     display:inline-block;
     width: 5.4vw;

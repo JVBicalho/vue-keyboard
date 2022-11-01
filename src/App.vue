@@ -1,13 +1,18 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import Key from './components/Key.vue'
+import KeyButton from './components/KeyButton.vue';
 </script>
 
 <template>
   <main>
+    <div>{{ text }}</div>
     <div class="keyboard">
-    <Key v-for="items in KeySimbolsArray" :keySymbol="items"></Key>
+    <Key v-for="items in KeySimbolsArray" :keySymbol="items" v-on:click="KeyPressed(items)"></Key>
   </div>
+  <!-- <div class="keyboard">
+    <KeyButton v-for="items in KeySimbolsArray" :keySymbol="items"></KeyButton>
+  </div> -->
   </main>
  
     
@@ -24,9 +29,21 @@ import Key from './components/Key.vue'
                         "Shift","z","x","c","v","b","n","m","\,","\.","\/","Shift",
                         "Ctrl","win","alt","space","alt","Fn","opitions","Crtl",
                       ],
-      KeyTest: ["Q","W",],
+      text: ["Q","W",]
     }
   },
+  methods: {
+    KeyPressed(key) {
+      
+      console.log(key)
+      
+      if (key == "bksp") {
+        this.text = this.text.slice(0, -1)
+        return
+      }
+      this.text += key
+    }
+  }
 }
       
     
@@ -49,6 +66,7 @@ body{
 }
 main{
   display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   margin: 0;
