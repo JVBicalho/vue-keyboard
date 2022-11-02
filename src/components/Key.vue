@@ -27,7 +27,10 @@ export default {
                 0.8vw 1.6vw 2vw rgba(0,0,0,0.4);
     overflow:hidden;
     padding:0.2vw 0.2vw;
-    margin:0.6vw 0.2vw;
+    
+  }
+  span:active{
+    transform: translateY(0.2vw);
   }
 /* Backspace */
 span:nth-child(14) {

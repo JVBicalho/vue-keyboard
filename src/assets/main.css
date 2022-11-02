@@ -1,5 +1,14 @@
 @import './base.css';
-
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box
+}
+body {
+  display: flex;
+  place-items: center;
+}
 #app {
   /* max-width: 1280px; */
   
@@ -7,7 +16,10 @@
   padding: 0rem;
 
   font-weight: normal;
+  display: flex;
+  flex-direction: column;
 }
+
 
 a,
 .green {
@@ -29,8 +41,7 @@ a,
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 0rem;
+    display: flex;
+    flex-direction: column;
   }
 }

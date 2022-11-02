@@ -1,18 +1,20 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+
 import Key from './components/Key.vue'
-import KeyButton from './components/KeyButton.vue';
+
 </script>
 
 <template>
+  <header>
+    <div class="text">{{ text }}</div>
+  </header>
   <main>
-    <div>{{ text }}</div>
-    <div class="keyboard">
-    <Key v-for="items in KeySimbolsArray" :keySymbol="items" v-on:click="KeyPressed(items)"></Key>
-  </div>
-  <!-- <div class="keyboard">
-    <KeyButton v-for="items in KeySimbolsArray" :keySymbol="items"></KeyButton>
-  </div> -->
+    
+  
+      <div class="keyboard">
+        <Key v-for="items in KeySimbolsArray" :keySymbol="items" v-on:click="KeyPressed(items)"></Key>
+      </div>
+
   </main>
  
     
@@ -28,17 +30,22 @@ import KeyButton from './components/KeyButton.vue';
                         "CapsLK","a","s","d","f","g","h","j","k","l",";","\'","Enter",
                         "Shift","z","x","c","v","b","n","m","\,","\.","\/","Shift",
                         "Ctrl","win","alt","space","alt","Fn","opitions","Crtl",
-                      ],
-      text: ["Q","W",]
+                     ],
+      text: "TESTE"
     }
   },
   methods: {
     KeyPressed(key) {
       
       console.log(key)
-      
+      // Backspace
       if (key == "bksp") {
         this.text = this.text.slice(0, -1)
+        return
+      }
+      // Space
+      if (key == "space") {
+        this.text+= ' '
         return
       }
       this.text += key
@@ -51,27 +58,30 @@ import KeyButton from './components/KeyButton.vue';
 </script>
 <style scoped>
 
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  box-sizing: border-box
-}
-#app{
-  
-}
-body{
-  background-color:#fff !important;
-  
-}
+
 main{
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  top: 25vh;
-  justify-content: center;
+  border-radius: 0.5vw;
+  padding-top: 2vw;
+  padding: 2vw;
+  align-items: center; 
+  
+  -webkit-box-shadow: inset 0px 0px 20px 14px rgba(237,237,237,1);
+-moz-box-shadow: inset 0px 0px 20px 14px rgba(237,237,237,1);
+box-shadow: inset 0px 0px 20px 14px rgba(237,237,237,1);
+}
+.text{
+  text-align: center;
+  overflow-wrap: break-word;
+  font-family: Georgia, serif;
+font-size: 25px;
+letter-spacing: 1.2px;
+word-spacing: 2.4px;
+color: #000000;
+font-weight: 400;
+text-decoration: solid rgb(68, 68, 68);
+font-style: normal;
+font-variant: small-caps;
+text-transform: none;
   
 }
 .keyboard{
