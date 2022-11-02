@@ -11,7 +11,7 @@ export default {
     }
 }
 </script>
-<style >
+<style scoped>
   span{
     cursor: pointer;
     position:relative;
@@ -27,6 +27,7 @@ export default {
                 0.8vw 1.6vw 2vw rgba(0,0,0,0.4);
     overflow:hidden;
     padding:0.2vw 0.2vw;
+    
     
   }
   span:active{
@@ -130,6 +131,7 @@ span:nth-child(61) {
     font-size:clamp(0.01em, 2vw ,33.5em);
     font-style:normal;
     text-transform:uppercase;
+    user-select: none; 
     
   }
  
